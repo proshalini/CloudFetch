@@ -52,11 +52,11 @@ const categorizeWindSpeed = (windSpeed) => {
 		return "Strong Wind";
 	}
 };
-
+const apiUrl ='https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=';
 const getWeather = (city) => {
 	cityName.innerHTML = city;
-
-	fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=' + city, options)
+	
+	fetch(apiUrl+ city, options)
 		.then(response => response.json())
 		.then(response => {
 			console.log(response);
@@ -91,7 +91,7 @@ submit.addEventListener('click', (e) => {
 	getWeather(city.value);
 });
 
-fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=shanghai', options)
+fetch(apiUrl+shanghai, options)
 	.then(shanghai => shanghai.json())
 	.then(shanghai => {
 		console.log(shanghai);
@@ -108,7 +108,7 @@ fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=shanghai', o
 
 	})
 
-fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=boston', options)
+fetch(apiUrl+boston, options)
 	.then(boston => boston.json())
 	.then(boston => {
 		console.log(boston);
@@ -125,7 +125,7 @@ fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=boston', opt
 
 	})
 
-fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=dubai', options)
+fetch(apiUrl+dubai, options)
 	.then(dubai => dubai.json())
 	.then(dubai => {
 		console.log(dubai);
@@ -142,7 +142,7 @@ fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=dubai', opti
 
 	})
 
-fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=maldives', options)
+fetch(apiUrl+maldives, options)
 	.then(maldives => maldives.json())
 	.then(maldives => {
 		console.log(maldives);
@@ -159,7 +159,7 @@ fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=maldives', o
 
 	})
 
-fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=london', options)
+fetch(apiUrl+london, options)
 	.then(london => london.json())
 	.then(london => {
 		console.log(london);
